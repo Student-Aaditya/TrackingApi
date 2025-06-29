@@ -3,21 +3,21 @@
 const socket=io();
 console.log("working");
 
-// if(navigator.geolocation){
-//      navigator.geolocation.watchPosition((position)=>{
-//         const {latitude,longitude}=position.coords;
-//         socket.emit("send-location",{latitude,longitude});
-//      },
-//      (error)=>{
-//         console.error(error);
-//      },
-//      {
-//         enableHighAccuracy:true,
-//         timeout:5000,
-//         maximumAge:0,
-//      }
-//     );
-// };
+if(navigator.geolocation){
+     navigator.geolocation.watchPosition((position)=>{
+        const {latitude,longitude}=position.coords;
+        socket.emit("send-location",{latitude,longitude});
+     },
+     (error)=>{
+        console.error(error);
+     },
+     {
+        enableHighAccuracy:true,
+        timeout:5000,
+        maximumAge:0,
+     }
+    );
+};
 // const data=
 //     {latitude:28.7041,
 //     longitude: 77.1025};
@@ -28,9 +28,9 @@ console.log("working");
 //         longitude:data[1]
 //     }
 // );
-const data={latitude:28.7041,longitude: 77.1025};
-// const [latitude,longitude]=data
-socket.emit("send-location",{...data});
+// const data={latitude:28.7041,longitude: 77.1025};
+// // const [latitude,longitude]=data
+// socket.emit("send-location",{...data});
 
 
 const map= L.map("map").setView([0,0],16);
