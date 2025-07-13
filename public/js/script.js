@@ -1,5 +1,3 @@
-// const { error } = require("console");
-
 const socket=io();
 console.log("working");
 
@@ -18,20 +16,6 @@ if(navigator.geolocation){
      }
     );
 };
-// const data=
-//     {latitude:28.7041,
-//     longitude: 77.1025};
-
-// const data=[28.7041,77.1025];
-// socket.emit("send-location",
-//     {latitude:data[0],
-//         longitude:data[1]
-//     }
-// );
-// const data={latitude:28.7041,longitude: 77.1025};
-// // const [latitude,longitude]=data
-// socket.emit("send-location",{...data});
-
 
 const map= L.map("map").setView([0,0],16);
 
